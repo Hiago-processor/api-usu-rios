@@ -4,11 +4,11 @@ require 'pg'
 require 'dotenv'
 
 DB = PG.connect(
-  host:     '127.0.0.1',
-  port:     5432,
-  dbname:   'meu_banco',
-  user:     'postgres',
-  password: 'Spacer9090'
+  host:     ENV['DB_HOST'],
+  port:     ENV['DB_PORT'],
+  dbname:   ENV['DB_NAME'],
+  user:     ENV['DB_USER'],
+  password: ENV['DB_PASSWORD']
 )
 
 # Listar todos os usuários
